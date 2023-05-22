@@ -40,6 +40,8 @@ const PaymentPage = () => {
       formData.number !== ""
     ) {
       setShowModal(true);
+    } else {
+      alert("Please fill the form before viewing account details.");
     }
   };
 
