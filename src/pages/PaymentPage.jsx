@@ -243,7 +243,7 @@ const PaymentPage = () => {
                 required
                 onChange={handleChange}
                 value={formData.method}
-                className="text-gray-500 focus:outline-0 bg-[#F2F2F2]  border-[0.5px] border-[#747474] rounded-[10px] py-3 px-5 mt-2 w-full"
+                className="text-gray-500 focus:outline-0 bg-[#F2F2F2]   border-[0.5px] border-[#747474] rounded-[10px] py-5 px-5 mt-2 w-full"
               >
                 <option value=""></option>
                 <option value="bank-transfer">Bank Transfer</option>
