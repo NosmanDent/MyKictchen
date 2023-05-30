@@ -139,7 +139,7 @@ function FoodDetails() {
           More Details about <span className="text-[#9333EA]">{title}</span>
         </h1>
         <div className="flex flex-col gap-8 md:flex-row md:items-center w-full mb-20">
-          <div className="md:w-1/2 md:h-[500px] h-[300px] w-full shadow-lg shadow-black rounded-lg bg-red-500">
+          <div className="md:w-1/2 md:h-[500px] h-[300px] w-full shadow-lg shadow-black rounded-lg ">
             <img
               src={img}
               alt={title}

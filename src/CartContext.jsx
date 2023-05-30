@@ -14,12 +14,13 @@ export const CartContext = createContext({
 
 export function CartProvider({ children }) {
   const [cartProducts, setCartProducts] = useState([]);
-  const [cart, setCart] = useState(
+  const [cart, setCart] = useState(() =>
     localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
   );
 
   const clearCart = () => {
     setCartProducts([]);
+    setCart([]);
   };
 
   useEffect(() => {
@@ -77,8 +78,8 @@ export function CartProvider({ children }) {
 
     if (quantity === 0) {
       // product is not in cart
-      setCartProducts([
-        ...cartProducts,
+      setCart((prevCart) => [
+        ...prevCart,
         {
           id: id,
           quantity: 1,
@@ -86,8 +87,8 @@ export function CartProvider({ children }) {
       ]);
     } else {
       // product is in cart
-      setCartProducts(
-        cartProducts.map((product) =>
+      setCart((prevCart) =>
+        prevCart.map((product) =>
           product.id === id
             ? { ...product, quantity: product.quantity + 1 }
             : product
@@ -99,11 +100,11 @@ export function CartProvider({ children }) {
   function removeOneFromCart(id) {
     const quantity = getProductQuantity(id);
 
-    if (quantity == 1) {
+    if (quantity === 1) {
       deleteFromCart(id);
     } else {
-      setCartProducts(
-        cartProducts.map((product) =>
+      setCart((prevCart) =>
+        prevCart.map((product) =>
           product.id === id
             ? { ...product, quantity: product.quantity - 1 }
             : product
@@ -113,10 +114,8 @@ export function CartProvider({ children }) {
   }
 
   function deleteFromCart(id) {
-    setCartProducts((cartProducts) =>
-      cartProducts.filter((currentProduct) => {
-        return currentProduct.id !== id;
-      })
+    setCart((prevCart) =>
+      prevCart.filter((currentProduct) => currentProduct.id !== id)
     );
   }
 
@@ -128,7 +127,6 @@ export function CartProvider({ children }) {
     deleteFromCart,
     cart,
     clearCart,
-    name,
   };
 
   return (
