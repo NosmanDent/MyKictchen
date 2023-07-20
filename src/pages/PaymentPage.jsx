@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import InputWrapper from "../components/InputWrapper";
 import { TbCurrencyNaira } from "react-icons/tb";
 import PaymentProduct from "../components/PaymentProduct";
+import { GiConfirmed } from "../react-icons/gi";
 
 const PaymentPage = () => {
   const cart = useContext(CartContext);
