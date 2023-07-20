@@ -1,5 +1,5 @@
 import { CartContext } from "../CartContext";
-import { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
 import { AiFillDelete } from "react-icons/ai";
 import { TbCurrencyNaira } from "react-icons/tb";
