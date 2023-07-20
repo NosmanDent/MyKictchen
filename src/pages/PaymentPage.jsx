@@ -6,6 +6,7 @@ import InputWrapper from "../components/InputWrapper";
 import { TbCurrencyNaira } from "react-icons/tb";
 import PaymentProduct from "../components/PaymentProduct";
 import { AiOutlineCheck } from "react-icons/ai";
+import Loader from "../components/Loader";
 
 const PaymentPage = () => {
   const cart = useContext(CartContext);
@@ -310,7 +311,7 @@ const PaymentPage = () => {
                 disabled={isLoading} // Disable the button while loading
               >
                 {isLoading ? (
-                  <AiOutlineCheck className="animate-spin mx-auto" />
+                  <Loader className="animate-spin mx-auto" />
                 ) : (
                   "Click after Payment"
                 )}
