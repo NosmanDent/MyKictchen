@@ -1,3 +1,4 @@
+import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import { useContext, useEffect, useState } from "react";
 import { supabase } from "../supabaseClient";
