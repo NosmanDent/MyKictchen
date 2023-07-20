@@ -54,13 +54,6 @@ const Navbar = () => {
         </Link>
 
         <div className="flex flex-1 flex-row items-center justify-end md:gap-2 gap-1 ">
-          <input
-            type="search"
-            name=""
-            id=""
-            className="hidden sm:flex py-2 rounded-full text-black md:text-sm text-xs focus:outline-none px-3 md:w-[300px] sm:w-[200px] xs:w-[180px] w-[130px] sm:h-10 h-8"
-            placeholder="search for meal"
-          />
           <Link to="cart">
             <AiOutlineShoppingCart className="text-white text-2xl" />
           </Link>

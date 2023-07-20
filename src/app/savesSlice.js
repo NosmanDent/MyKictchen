@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import { supabase } from "../supabaseClient";
 
 export const getSaveMeal = createAsyncThunk("saves/getSaveMeal", async (id) => {
-  return await supabase.from("kitchen").select().eq("user_id", id);
+  return await supabase.from("saves").select().eq("user_id", id);
 });
 
 const initialState = {
@@ -22,10 +22,10 @@ const savesSlice = createSlice({
       localStorage.savedMeals = JSON.stringify(state.saves);
     },
   },
-  extraReducers: {
-    [getSaveMeal.fulfilled]: (state, action) => {
+  extraReducers: (builder) => {
+    builder.addCase(getSaveMeal.fulfilled, (state, action) => {
       state.saves = action.payload.data;
-    },
+    });
   },
 });
 

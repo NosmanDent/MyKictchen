@@ -1,10 +1,10 @@
 import React, { useContext, useState, useEffect, useRef } from "react";
 import { CartContext } from "../CartContext";
-import CartProduct from "../components/CartProduct";
 import { supabase } from "../supabaseClient";
 import { Link, useNavigate } from "react-router-dom";
 import InputWrapper from "../components/InputWrapper";
 import { TbCurrencyNaira } from "react-icons/tb";
+import PaymentProduct from "../components/PaymentProduct";
 
 const PaymentPage = () => {
   const cart = useContext(CartContext);
@@ -139,12 +139,12 @@ const PaymentPage = () => {
           {productsCount > 0 ? (
             <section className=" flex-col w-full mb-16 ">
               {cart.items.map((currentProduct, idx) => (
-                <CartProduct
+                <PaymentProduct
                   key={idx}
                   id={currentProduct.id}
                   quantity={currentProduct.quantity}
                   className=""
-                ></CartProduct>
+                ></PaymentProduct>
               ))}
 
               <div className="space-y-1 text-right bg-[#111827]  py-1 md:mx-10">
