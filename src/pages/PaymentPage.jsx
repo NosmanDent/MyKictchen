@@ -12,11 +12,27 @@ const PaymentPage = () => {
   const [totalCost, setTotalCost] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [name, setName] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    // Check if any required field is empty
+    if (
+      formData.email === "" ||
+      formData.name === "" ||
+      formData.method === "" ||
+      formData.city === "" ||
+      formData.number === ""
+    ) {
+      alert("Please fill the form.");
+      return;
+    }
+
+    // Set isLoading to true when the button is clicked
+    setIsLoading(true);
 
     // Perform your getform function here
     // ...
@@ -24,11 +40,11 @@ const PaymentPage = () => {
     // Clear the cart
     cart.clearCart();
 
-    // Navigate to the success page
-    navigate(`/success?name=${encodeURIComponent(formData.name)}`);
-
-    // Note: Avoid using window.location.reload() as it will interrupt the navigation.
-    // Reloading the page is unnecessary since you're navigating to a different route.
+    // Navigate to the success page after a short delay (optional)
+    setTimeout(() => {
+      navigate(`/success?name=${encodeURIComponent(formData.name)}`);
+      setIsLoading(false); // Reset isLoading to false
+    }, 1500); // Delay of 1.5 seconds
   };
 
   const toggleModal = () => {
@@ -41,7 +57,7 @@ const PaymentPage = () => {
     ) {
       setShowModal(true);
     } else {
-      alert("Please fill the form before viewing account details.");
+      alert("Please fill the form.");
     }
   };
 
@@ -290,8 +306,13 @@ const PaymentPage = () => {
               <button
                 className="block w-full bg-[blue] md:text-xl text-sm text-white mt-8 h-[3.5rem]"
                 onClick={handleSubmit}
+                disabled={isLoading} // Disable the button while loading
               >
-                Click after Payment
+                {isLoading ? (
+                  <GiConfirmed className="animate-spin mx-auto" />
+                ) : (
+                  "Click after Payment"
+                )}
               </button>
             </div>
             <Link to="/shop" className="md:hidden">
