@@ -20,8 +20,8 @@ const RecommendCard = ({ kitchen, id }) => {
           />
 
           <div className="absolute inset-0 bg-black/90 rounded-lg flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity">
-            <span className="text-white text-lg font-bold text-center">
-              Read More about {kitchen.title}
+            <span className="text-white text-sm font-bold text-center  bg-white/10 rounded-full px-4 py-2">
+              More about {kitchen.title}
             </span>
           </div>
         </div>
