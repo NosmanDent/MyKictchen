@@ -1,4 +1,4 @@
-import { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { CartContext } from "../CartContext";
 import CartProduct from "../components/CartProduct";
 import { supabase } from "../supabaseClient";
