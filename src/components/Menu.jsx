@@ -20,8 +20,8 @@ const Menu = ({ items }) => {
                 />
 
                 <div className="absolute inset-0 bg-black/90 rounded-t-full flex justify-center items-center opacity-0 hover:opacity-100 transition-opacity">
-                  <span className="text-white text-sm font-bold text-center px-2 md:px-1">
-                    Read More about {title}
+                  <span className="text-white text-sm font-bold text-center  bg-white/10 rounded-full px-4 py-2">
+                    More about {title}
                   </span>
                 </div>
               </div>
