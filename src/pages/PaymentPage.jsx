@@ -300,12 +300,12 @@ const PaymentPage = () => {
             <div className="flex flex-row gap-2 ">
               <div
                 onClick={toggleModal}
-                className="cursor-pointer border border-black  block w-full text-center md:text-xl text-sm text-black mt-8 py-3 "
+                className="cursor-pointer border border-black  block w-full text-center md:text-xl text-xs text-black mt-8 py-3 "
               >
                 Account Details
               </div>
               <button
-                className="block w-full bg-black md:text-xl text-sm text-white mt-8 h-[3.5rem]"
+                className="block w-full bg-black md:text-xl text-xs text-white mt-8 h-[3.5rem] px-1"
                 onClick={handleSubmit}
                 disabled={isLoading} // Disable the button while loading
               >
