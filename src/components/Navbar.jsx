@@ -3,7 +3,7 @@ import { MdFastfood } from "react-icons/md";
 import { NavLink, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { supabase } from "../supabaseClient";
-import { AiOutlineShoppingCart } from "react-icons/ai";
+import { GiFireBowl } from "react-icons/gi";
 import { getUserDetail } from "../app/userSlice";
 import { setUser } from "../app/userSlice";
 import { CartContext } from "../CartContext";
@@ -46,7 +46,7 @@ const Navbar = () => {
             <h1 className="nav-logo italic  md:text-2xl text-sm text-white">
               My
             </h1>
-            <MdFastfood className="md:text-3xl text-sm text-red-700" />
+            <MdFastfood className="md:text-3xl text-sm text-pink-500" />
             <h1 className="nav-logo italic text-sm md:text-2xl underline text-stone-200">
               Kitchen
             </h1>
@@ -55,12 +55,12 @@ const Navbar = () => {
 
         <div className="flex flex-1 flex-row items-center justify-end md:gap-2 gap-1 ">
           <Link to="cart">
-            <AiOutlineShoppingCart className="text-white text-2xl" />
+            <GiFireBowl className="text-white text-2xl" />
           </Link>
 
           <h1
             className="md:text-xs text-[10px] font-bold leading-none
-            text-red-100 transform -translate-y-1/2 bg-red-600 rounded-full px-2 py-1   -ml-4"
+            text-red-100 transform -translate-y-1/2 bg-pink-600 rounded-full px-2 py-1   -ml-4"
           >
             {productsCount}
           </h1>
@@ -89,7 +89,7 @@ function Menu({ handleClick, user, handleSignOut }) {
         ) : (
           <NavLink
             to="login"
-            className="bg-purple-600 text-white py-2 md:px-6 px-4 text-xs rounded-lg whitespace-nowrap"
+            className="bg-pink-600 text-white py-2 md:px-6 px-4 text-xs rounded-lg whitespace-nowrap"
           >
             Sign Up
           </NavLink>

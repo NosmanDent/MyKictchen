@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import { supabase } from "../supabaseClient";
 import Loader from "./Loader";
 import { TbCurrencyNaira } from "react-icons/tb";
-import { CgArrowLongLeftL } from "react-icons/cg";
+import { RiEyeCloseLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { CartContext } from "../CartContext";
 import { useSelector } from "react-redux";
@@ -127,12 +127,11 @@ function FoodDetails() {
   const { title, description, price, img, category, status } = product;
 
   return (
-    <section>
-      <div className=" mx-10  mt-10 ">
+    <section className="bg-pink-300">
+      <div className=" px-10  pt-10 ">
         <Link to="/shop">
           <div className="flex flex-row items-center gap-2">
-            <CgArrowLongLeftL className="text-3xl " />
-            <p>Go Back</p>
+            <RiEyeCloseLine className="text-3xl " />
           </div>
         </Link>
         <h1 className="mt-20 mb-6 nav-logo md:text-5xl sm:text-3xl text-xl font-semibold border-b pb-4 border-black">

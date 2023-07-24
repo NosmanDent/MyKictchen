@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <main className="mt-20 sm:mt-28 md:mt-0">
+    <main className="pt-20 sm:pt-28 md:pt-0 bg-pink-300">
       <section className="h-screen  md:mx-10 mx-10 justify-center flex flex-1 md:flex-row flex-col items-center gap-4 ">
         <div className="md:w-1/2 w-full flex flex-col md:items-start items-center md:justify-start justify-center md:text-start gap-2 text-center">
-          <h1 className="text-red-700 font-mono font-semibold md:text-xl  whitespace-nowrap ">
+          <h1 className="text-black font-mono font-semibold md:text-xl  whitespace-nowrap ">
             We Deliver Nationawide
           </h1>
           <h1 className="lg:text-5xl md:text-4xl sm:text-3xl text-2xl font-serif font-bold">
@@ -66,7 +66,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="mb-20 mx-10">
+      <section className="pb-20 mx-10">
         <div className="space-y-3 text-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -104,7 +104,7 @@ const Home = () => {
               Subscribe
             </button>
           </form>
-          <p className="mt-3 mx-auto text-center max-w-lg text-[15px] text-gray-400">
+          <p className="mt-3 mx-auto text-center max-w-lg text-[15px] text-gray-800">
             No spam ever, we care about the protection of your data. Read our{" "}
             <a className="text-indigo-600 underline" href="#">
               {" "}

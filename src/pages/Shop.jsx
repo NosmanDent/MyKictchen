@@ -61,24 +61,26 @@ function Shop() {
   ));
 
   return (
-    <main>
-      <section className="mt-20  w-full flex flex-col flex-1 items-center justify-center">
-        <div className="title">
-          <h2 className="md:text-6xl sm:text-4xl text-3xl nav-logo border-b border-black p-1 flex items-end justify-end ">
-            Our Menu
-          </h2>
-        </div>
-        <div className="w-full flex items-center justify-center">
+    <main className="bg-pink-300 w-full pt-20 flex flex-col">
+      <div className="flex flex-col md:flex-row items-center md:justify-between justify-center w-full px-12 gap-4 ">
+        <h2 className="md::text-4xl sm:text-3xl text-2xl border-b border-black p-1  md:w-1/2">
+          Our Menu
+        </h2>
+
+        <div className=" md:w-1/2 w-full bg-red-900">
           <input
             type="search"
             name=""
             id=""
             placeholder="Search..."
-            className="border border-black rounded-tl-full rounded-br-full focus:outline-none mt-10 py-4  w-1/2  px-10 text-xl"
+            className="border border-black  focus:outline-none py-2 w-full  px-4 text-xl"
             value={searchQuery}
             onChange={handleSearch}
           />
         </div>
+      </div>
+
+      <section className="w-full flex flex-col items-center justify-center">
         <Categories categories={categories} filterItems={filterItems} />
         {loading ? loaders : <Menu items={menuItems} />}
       </section>

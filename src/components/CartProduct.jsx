@@ -38,7 +38,7 @@ function CartProduct(props) {
   }
 
   return (
-    <section className="flex flex-col  p-6 space-y-4  bg-gray-900 text-gray-100 md:mx-10 border border-white">
+    <section className="flex flex-col  p-6 space-y-4  bg-stone-200 text-gray-100 md:mx-10 border-b border-black">
       <ul className="flex flex-col ">
         <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
           <div className="flex flex-col md:flex-row w-full  sm:space-x-4">
@@ -50,18 +50,18 @@ function CartProduct(props) {
             <div className="flex flex-col justify-between w-full pb-4">
               <div className="flex justify-between w-full pb-2 space-x-2">
                 <div className="space-y-1">
-                  <h3 className="md:text-lg text-sm  font-semibold leading-snug sm:pr-8">
+                  <h3 className="md:text-lg text-black text-sm  font-semibold leading-snug sm:pr-8">
                     {productData.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-800">
                     Category: {productData.category}
                   </p>
                 </div>
                 <div className="text-right">
-                  <p className="text-sm md:text-lg font-semibold">
+                  <p className="text-sm md:text-lg font-semibold text-black">
                     {quantity} total
                   </p>
-                  <p className="text-xs md:text-sm  text-gray-200 flex items-start">
+                  <p className="text-xs md:text-sm  text-gray-700 flex items-start">
                     <TbCurrencyNaira className="text-lg" />
                     {(quantity * productData.price).toFixed(2)}
                   </p>

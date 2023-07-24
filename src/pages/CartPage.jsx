@@ -49,11 +49,8 @@ const CartPage = () => {
   );
 
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col bg-pink-300">
       <div className="flex flex-1  w-full h-[300px]">
-        <h1 className=" nav-logo lg:text-6xl text-4xl font-serif font-bold  flex  justify-center mx-auto mt-20">
-          CART
-        </h1>
         <div className="flex absolute items-center ml-4 mt-4 gap-2">
           <h1 className="text-sm font-semibold  cursor-pointer">
             <Link to="/">
@@ -78,7 +75,7 @@ const CartPage = () => {
       {productsCount > 0 ? (
         <section className=" flex-col w-full mb-16 ">
           <p className="md:text-4xl text-center font-serif mb-6 text-2xl font-semibold">
-            Items in your cart
+            You Cart
           </p>
           {cart.items.map((currentProduct, idx) => (
             <CartProduct
@@ -89,11 +86,11 @@ const CartPage = () => {
             ></CartProduct>
           ))}
 
-          <div className="space-y-1 text-right bg-[#111827] md:pr-6 pr-4 py-1 md:mx-10">
-            <p className="text-sm text-gray-400 flex items-start justify-end">
+          <div className="space-y-1 text-right bg-black md:pr-6 pr-4 py-1 md:mx-10">
+            <p className="text-sm text-white flex items-start justify-end">
               Food Cost: <TbCurrencyNaira className="text-lg" /> {totalCost}{" "}
             </p>
-            <p className="text-sm text-gray-400 flex flex-row items-start justify-end">
+            <p className="text-sm text-white flex flex-row items-start justify-end">
               Shipping costs{" "}
               <span>
                 <TbCurrencyNaira className="text-lg" />
@@ -105,11 +102,11 @@ const CartPage = () => {
               {totalCostWithShipping}
             </p>
           </div>
-          <div className="flex justify-end space-x-4 bg-[#111827] md:pr-6 pr-4 py-6 md:mx-10">
+          <div className="flex justify-end space-x-4 bg-black md:pr-6 pr-4 py-6 md:mx-10">
             <Link to="/">
               <button
                 type="button"
-                className="px-6 py-2 border rounded-md text-white border-violet-400"
+                className="px-6 py-2 border rounded-md text-white border-pink-300"
               >
                 Back
                 <span className="sr-only sm:not-sr-only"> to shop</span>
@@ -118,7 +115,7 @@ const CartPage = () => {
             <Link to="/payment">
               <button
                 type="button"
-                className="px-6 py-2 border rounded-md bg-violet-400 text-gray-900 border-violet-400"
+                className="px-6 py-2 border rounded-md bg-pink-300 text-gray-900 border-pink-200"
               >
                 <span className="sr-only sm:not-sr-only">Continue to </span>
                 Checkout
@@ -127,7 +124,7 @@ const CartPage = () => {
           </div>
         </section>
       ) : (
-        <div className="flex flex-col flex-1 items-center justify-center gap-4">
+        <div className="flex flex-col w-full items-center justify-center h-screen gap-4">
           <h1 className="text-2xl md:text-3xl font-semibold">
             Your Cart Is Empty
           </h1>
