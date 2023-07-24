@@ -67,7 +67,7 @@ function Shop() {
           Our Menu
         </h2>
 
-        <div className=" md:w-1/2 w-full bg-red-900">
+        <div className=" md:w-1/2 w-full">
           <input
             type="search"
             name=""

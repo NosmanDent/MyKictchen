@@ -69,19 +69,19 @@ function CartProduct(props) {
               </div>
               <div className="md:bg-black/50 rounded-full py-2 px-6 md:w-48 flex -ml-6 md:-ml-0">
                 <button
-                  className="md:bg-black rounded-full text-white md:text-3xl text-lg py-1 px-3 shadow-lg shadow-white "
+                  className="bg-black rounded-full text-white md:text-3xl text-lg py-1 px-3 shadow-lg shadow-white "
                   onClick={() => cart.addOneToCart(id)}
                 >
                   +
                 </button>
                 <button
-                  className=" rounded-full text-white md:text-2xl text-xl py-[10px] px-3 "
+                  className=" rounded-full text-red-700 md:text-2xl text-xl py-[10px] px-3 "
                   onClick={() => cart.deleteFromCart(id)}
                 >
                   <AiFillDelete />
                 </button>
                 <button
-                  className="md:bg-black rounded-full text-white md:text-3xl text-lg py-1 px-3 shadow-lg shadow-white "
+                  className="bg-black rounded-full text-white md:text-3xl text-lg py-1 px-3 shadow-lg shadow-white "
                   onClick={() => cart.removeOneFromCart(id)}
                 >
                   -

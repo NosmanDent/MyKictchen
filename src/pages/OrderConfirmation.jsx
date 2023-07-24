@@ -6,7 +6,7 @@ const OrderConfirmation = () => {
   const queryParams = new URLSearchParams(location.search);
   const name = queryParams.get("name");
   return (
-    <div className="flex flex-col items-center justify-center w-full h-screen text-center gap-3">
+    <div className="flex flex-col items-center justify-center w-full h-screen text-center gap-3 bg-pink-300">
       <h4 className="font-medium md:text-4xl text-2xl flex items-center">
         Hey&nbsp;<span className="text-blue-700 font-bold">{name}</span>,
       </h4>

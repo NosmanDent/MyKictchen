@@ -4,12 +4,15 @@ import CartProduct from "../components/CartProduct";
 import { supabase } from "../supabaseClient";
 import { GiShoppingCart } from "react-icons/gi";
 import { TbCurrencyNaira } from "react-icons/tb";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const cart = useContext(CartContext);
   const [totalCost, setTotalCost] = useState(0);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     calculateTotalCost();
@@ -40,6 +43,16 @@ const CartPage = () => {
     setTotalCost(total);
   };
 
+  const handleCheckout = () => {
+    setLoading(true);
+
+    setTimeout(() => {
+      setLoading(false);
+      // After the delay, navigate to the payment page
+      navigate("/payment");
+    }, 5000); // 5000 milliseconds = 5 seconds
+  };
+
   const twoPercentOfTotalCost = totalCost * 0.02;
   const totalCostWithShipping = totalCost + twoPercentOfTotalCost;
 
@@ -47,7 +60,6 @@ const CartPage = () => {
     (sum, product) => sum + product.quantity,
     0
   );
-
   return (
     <div className="flex flex-col bg-pink-300">
       <div className="flex flex-1  w-full h-[300px]">
@@ -73,7 +85,7 @@ const CartPage = () => {
       </div>
 
       {productsCount > 0 ? (
-        <section className=" flex-col w-full mb-16 ">
+        <section className=" flex-col w-full h-full py-20 items-center justify-center">
           <p className="md:text-4xl text-center font-serif mb-6 text-2xl font-semibold">
             You Cart
           </p>
@@ -112,15 +124,25 @@ const CartPage = () => {
                 <span className="sr-only sm:not-sr-only"> to shop</span>
               </button>
             </Link>
-            <Link to="/payment">
+            <div>
               <button
                 type="button"
                 className="px-6 py-2 border rounded-md bg-pink-300 text-gray-900 border-pink-200"
+                onClick={handleCheckout} // Add the click event handler
+                disabled={loading} // Disable the button when loading is true
               >
-                <span className="sr-only sm:not-sr-only">Continue to </span>
-                Checkout
+                {loading ? (
+                  // Display the loading spinner when loading is true
+                  <AiOutlineLoading3Quarters className="animate-spin mx-auto" />
+                ) : (
+                  // Display the button text when loading is false
+                  <>
+                    <span className="sr-only sm:not-sr-only">Continue to </span>
+                    Checkout
+                  </>
+                )}
               </button>
-            </Link>
+            </div>
           </div>
         </section>
       ) : (

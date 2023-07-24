@@ -37,7 +37,7 @@ function PaymentProduct(props) {
   }
 
   return (
-    <section className="flex flex-col  p-6 space-y-4  bg-gray-900 text-gray-100 md:mx-10 border border-white">
+    <section className="flex flex-col  p-6 space-y-4  bg-pink-300 text-gray-900 md:mx-10 border border-white">
       <ul className="flex flex-col ">
         <li className="flex flex-col py-6 sm:flex-row sm:justify-between">
           <div className="flex flex-col md:flex-row w-full  sm:space-x-4">
@@ -52,7 +52,7 @@ function PaymentProduct(props) {
                   <h3 className="md:text-lg text-sm  font-semibold leading-snug sm:pr-8">
                     {productData.title}
                   </h3>
-                  <p className="text-xs md:text-sm text-gray-400">
+                  <p className="text-xs md:text-sm text-gray-900">
                     Category: {productData.category}
                   </p>
                 </div>
@@ -60,7 +60,7 @@ function PaymentProduct(props) {
                   <p className="text-sm md:text-lg font-semibold">
                     {quantity} total
                   </p>
-                  <p className="text-xs md:text-sm  text-gray-200 flex items-start">
+                  <p className="text-xs md:text-sm  text-gray-900 flex items-start">
                     <TbCurrencyNaira className="text-lg" />
                     {(quantity * productData.price).toFixed(2)}
                   </p>

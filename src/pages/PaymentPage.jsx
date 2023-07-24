@@ -120,12 +120,12 @@ const PaymentPage = () => {
     0
   );
   return (
-    <>
-      <div className="flex flex-1  w-full mb-10">
-        <h1 className=" nav-logo lg:text-6xl text-4xl font-serif font-bold  flex  justify-center mx-auto mt-20">
+    <section className="bg-pink-300 pb-16 px-10">
+      <div className="flex flex-1  w-full pb-10 ">
+        <h1 className=" lg:text-6xl text-4xl font-serif font-bold  flex  justify-center mx-auto mt-20">
           Payment
         </h1>
-        <div className="flex absolute items-center ml-4 mt-4 gap-2">
+        <div className="flex absolute items-center ml-4 mt-4 gap-2 ">
           <h1 className="text-sm font-semibold  cursor-pointer">
             <Link to="/">
               <span className="md:bg-black md:text-xs md:py-2 md:px-3 md:text-white rounded-full">
@@ -151,7 +151,7 @@ const PaymentPage = () => {
           </h1>
         </div>
       </div>
-      <section className=" flex md:flex-row flex-col w-full  gap- bg-[#111827] p-10">
+      <section className=" flex md:flex-row flex-col w-full  gap- bg-stone-200 p-10">
         <div className="flex flex-col md:w-1/2 w-full">
           {productsCount > 0 ? (
             <section className=" flex-col w-full mb-16 ">
@@ -164,25 +164,25 @@ const PaymentPage = () => {
                 ></PaymentProduct>
               ))}
 
-              <div className="space-y-1 text-right bg-[#111827]  py-1 md:mx-10">
-                <p className="text-sm text-gray-400 flex flex-row items-center justify-end">
+              <div className="space-y-1 text-right bg-stone-200  py-1 md:mx-10">
+                <p className="text-sm text-gray-900 flex flex-row items-center justify-end">
                   Food Cost:{" "}
                   <span>
                     <TbCurrencyNaira className="text-lg" />
                   </span>{" "}
                   {totalCost}{" "}
                 </p>
-                <p className="text-sm text-gray-400 flex flex-row items-center justify-end">
+                <p className="text-sm text-gray-900 flex flex-row items-center justify-end">
                   Shipping costs{" "}
                   <span>
                     <TbCurrencyNaira className="text-lg" />
                   </span>{" "}
                   {twoPercentOfTotalCost}
                 </p>
-                <div className="text-white flex flex-row items-center justify-end">
+                <div className="text-black flex flex-row items-center justify-end">
                   Total:{" "}
                   <span>
-                    <TbCurrencyNaira className="text-lg" />
+                    <TbCurrencyNaira className="text-lg " />
                   </span>{" "}
                   {totalCostWithShipping}
                 </div>
@@ -199,7 +199,7 @@ const PaymentPage = () => {
             </div>
           )}
         </div>
-        <main className="flex md:w-1/2 w-full md:mr-6 bg-[#111827]">
+        <main className="flex md:w-1/2 w-full md:mr-6 bg-pink-300 p-3">
           <form
             className="w-full"
             action="https://getform.io/f/58aec1d4-8dbb-4a27-bf7f-b07d732037a0"
@@ -208,7 +208,7 @@ const PaymentPage = () => {
             onSubmit={handleSubmit}
           >
             <InputWrapper>
-              <label htmlFor="email" className="text-white">
+              <label htmlFor="email" className="text-black">
                 Your email
               </label>
               <input
@@ -230,13 +230,13 @@ const PaymentPage = () => {
               />
               <label
                 htmlFor="checkbox"
-                className="text-sm ml-3 mt-3 inline-block text-white"
+                className="text-sm ml-3 mt-3 inline-block text-black"
               >
                 Get updates about new drops & exclusive offers
               </label>
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="name" className="text-white">
+              <label htmlFor="name" className="text-black">
                 Your full name
               </label>
               <input
@@ -250,7 +250,7 @@ const PaymentPage = () => {
               />
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="method" className="text-white">
+              <label htmlFor="method" className="text-black">
                 Payment Method
               </label>
               <select
@@ -267,7 +267,7 @@ const PaymentPage = () => {
               </select>
             </InputWrapper>
             <InputWrapper>
-              <label htmlFor="city" className="text-white">
+              <label htmlFor="city" className="text-black">
                 Address
               </label>
               <input
@@ -282,7 +282,7 @@ const PaymentPage = () => {
             </InputWrapper>
 
             <InputWrapper>
-              <label htmlFor="number" className="text-white">
+              <label htmlFor="number" className="text-black">
                 Phone Number
               </label>
               <input
@@ -300,12 +300,12 @@ const PaymentPage = () => {
             <div className="flex flex-row gap-2 ">
               <div
                 onClick={toggleModal}
-                className="cursor-pointer border boder-white  block w-full text-center md:text-xl text-sm text-white mt-8 py-3 "
+                className="cursor-pointer border border-black  block w-full text-center md:text-xl text-sm text-black mt-8 py-3 "
               >
                 Account Details
               </div>
               <button
-                className="block w-full bg-[blue] md:text-xl text-sm text-white mt-8 h-[3.5rem]"
+                className="block w-full bg-black md:text-xl text-sm text-white mt-8 h-[3.5rem]"
                 onClick={handleSubmit}
                 disabled={isLoading} // Disable the button while loading
               >
@@ -317,7 +317,7 @@ const PaymentPage = () => {
               </button>
             </div>
             <Link to="/shop" className="md:hidden">
-              <span className="text-lg underline text-stone-400 block text-center my-7">
+              <span className="text-lg underline text-stone-900 block text-center my-7">
                 Go Back to Kitchen
               </span>
             </Link>
@@ -332,7 +332,7 @@ const PaymentPage = () => {
                   ></div>
                   <div className="bg-white rounded-lg p-6 z-10">
                     <button
-                      className="absolute top-2 right-2 text-white text-8xl"
+                      className="absolute top-2 right-2 text-black text-8xl"
                       onClick={() => {
                         setShowModal(false);
                       }}
@@ -382,7 +382,7 @@ const PaymentPage = () => {
           </form>
         </main>
       </section>
-    </>
+    </section>
   );
 };
 
