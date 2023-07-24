@@ -133,7 +133,7 @@ const CartPage = () => {
               >
                 {loading ? (
                   // Display the loading spinner when loading is true
-                  <AiOutlineLoading3Quarters className="animate-spin mx-auto px-6 py-3" />
+                  <AiOutlineLoading3Quarters className="animate-spin mx-auto py-1" />
                 ) : (
                   // Display the button text when loading is false
                   <>
