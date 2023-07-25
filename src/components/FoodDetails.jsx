@@ -15,7 +15,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { MdNavigateBefore, MdNavigateNext } from "react-icons/md";
-import { FaBowlFood } from "react-cons/fa";
+import { GiBowlOfRice } from "react-icons/gi";
 import "../components/foodDetails.css";
 
 function FoodDetails() {
@@ -168,8 +168,12 @@ function FoodDetails() {
             {productQuantity > 0 ? (
               <>
                 <div className="flex md:flex-row flex-col gap-2 items-center">
-                  <label htmlFor="" className="text-xs font-semibold">
-                    <FaBowlFood />: {productQuantity}
+                  <label
+                    htmlFor=""
+                    className="text-xs font-semibold flex flex-row items-center"
+                  >
+                    <GiBowlOfRice className="text-2xl md:text-4xl text-green-700" />{" "}
+                    {productQuantity}
                   </label>
                   <div className="bg-black/50 rounded-full py-2 px-6">
                     <button
